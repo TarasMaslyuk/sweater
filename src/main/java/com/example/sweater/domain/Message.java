@@ -11,10 +11,16 @@ import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.util.List;
 
 /**
  * Message.
@@ -42,8 +48,17 @@ public class Message {
     @Column(name = "tag")
     private String tag;
 
-    public Message(String text, String tag) {
+    public Message(User user, String text, String tag) {
+        this.author = user;
         this.text = text;
         this.tag = tag;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "user_id")
+    private User author;
+
+    public String getAuthorName() {
+        return author != null ? author.getUsername() : "none";
     }
 }
