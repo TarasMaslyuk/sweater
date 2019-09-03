@@ -39,6 +39,7 @@ public class MainController {
 
     @GetMapping("/")
     public String greeting(Map<String, Object> model) {
+        System.out.println("hi");
         return "greeting";
     }
 
