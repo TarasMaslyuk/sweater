@@ -1,20 +1,9 @@
-/*
- * VTB Group. Do not reproduce without permission in writing.
- * Copyright (c) 2019 VTB Group. All rights reserved.
- */
 
 package com.example.sweater.controllers;
-
-/**
- * S.
- *
- * @author Taras
- */
 
 
 import com.example.sweater.domain.Role;
 import com.example.sweater.domain.User;
-
 import com.example.sweater.repositoryes.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +13,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.Collections;
 import java.util.Map;
 
+/**
+ * RegistrationController
+ *
+ * @author Taras
+ */
 @Controller
 public class RegistrationController {
     @Autowired

@@ -1,7 +1,3 @@
-/*
- * VTB Group. Do not reproduce without permission in writing.
- * Copyright (c) 2019 VTB Group. All rights reserved.
- */
 
 package com.example.sweater.configuration;
 
@@ -46,8 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .permitAll()
                 .and()
-                  .logout()
-                  .permitAll();
+                .logout()
+                .permitAll();
     }
 
     @Override
@@ -56,4 +52,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 passwordEncoder(NoOpPasswordEncoder.getInstance());
 
     }
+
 }
